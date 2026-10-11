@@ -1,0 +1,35 @@
+{
+  "name": "touch-arcade",
+  "productName": "Touch Arcade",
+  "version": "1.2.0",
+  "description": "Touch-friendly arcade style game launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false ELECTRON_BUILDER_CACHE=./.cache/builder ELECTRON_CACHE=./.cache/electron electron-builder --win portable",
+    "dist:folder": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false ELECTRON_BUILDER_CACHE=./.cache/builder ELECTRON_CACHE=./.cache/electron electron-builder --win dir",
+    "package": "npm run dist:folder && node scripts/package.js"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "build": {
+    "appId": "local.touch.arcade",
+    "productName": "Touch Arcade",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}.${ext}"
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}

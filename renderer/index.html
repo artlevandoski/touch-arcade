@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' file: data:; style-src 'self'; script-src 'self'">
+  <title>Touch Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" id="bgA"></div>
+  <div class="bg" id="bgB"></div>
+  <div class="shade"></div>
+
+  <header>
+    <img id="appLogo" src="assets/touch-arcade-logo.svg" alt="Touch Arcade">
+    <div class="head-btns">
+      <button class="icon-btn" id="manageBtn">Manage games</button>
+      <button class="icon-btn" id="exitBtn" aria-label="Exit launcher">Exit</button>
+    </div>
+  </header>
+
+  <main id="stage">
+    <div id="track"></div>
+  </main>
+
+  <section id="info">
+    <img id="logo" alt="" hidden>
+    <h2 id="gameTitle"></h2>
+    <p id="gameDesc"></p>
+    <div id="tags"></div>
+    <button id="playBtn">Play</button>
+  </section>
+
+  <div id="overlay" hidden>
+    <div class="spinner"></div>
+    <p id="overlayText"></p>
+  </div>
+
+  <div id="confirm" hidden>
+    <div class="dialog">
+      <p id="confirmMsg"></p>
+      <div class="row">
+        <button id="confirmNo">Cancel</button>
+        <button id="confirmYes">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="manager" hidden>
+    <div class="mgr-head">
+      <h2>Manage games</h2>
+      <div class="head-btns">
+        <button class="icon-btn" id="openData">Open launcher folder</button>
+        <button class="icon-btn" id="mgrClose">Done</button>
+      </div>
+    </div>
+    <div class="mgr-body">
+      <aside id="mgrSide">
+        <div id="mgrList"></div>
+        <button id="mgrAdd">Add a game</button>
+      </aside>
+      <div id="mgrForm" hidden>
+        <label>Title<input id="fTitle" autocomplete="off"></label>
+        <label>Description<textarea id="fDesc" rows="3"></textarea></label>
+        <label>Tags, separated by commas<input id="fTags" autocomplete="off"></label>
+        <div class="pick">
+          <span class="lbl">Game file</span>
+          <span class="path" id="fExeText">Nothing chosen</span>
+          <button id="pickExe">Browse</button>
+          <button id="openGames">Games folder</button>
+        </div>
+        <p id="exeNote"></p>
+        <div class="slots" id="slots"></div>
+        <label class="color">Accent color<input type="color" id="fAccent" value="#ff5d8f"></label>
+        <details>
+          <summary>Advanced</summary>
+          <label>Launch arguments<input id="fArgs" autocomplete="off"></label>
+          <label>Process to wait for (only if the game hands off to another program)<input id="fWatch" autocomplete="off" placeholder="Game-Win64.exe"></label>
+        </details>
+        <div class="mgr-actions">
+          <button id="mgrSave">Save</button>
+          <button id="mgrUp">Move earlier</button>
+          <button id="mgrDown">Move later</button>
+          <button id="mgrDelete">Delete</button>
+        </div>
+      </div>
+      <p id="mgrEmpty">Tap Add a game to get started.</p>
+    </div>
+  </section>
+
+  <div id="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

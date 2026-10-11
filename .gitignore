@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.cache/
+userdata/
+# program-generated backups
+games.json.bak
+games.json.tmp
+games.before-v*.bak
+# Game files can be huge, so they are kept out of GitHub
+games/
+# Uncomment to keep your personal game list and artwork out of GitHub:
+# games.json
+# artwork/
