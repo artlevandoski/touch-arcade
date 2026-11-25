@@ -1,4 +1,4 @@
-# Touch Arcade
+<img width="960" height="540" alt="Touch Arcade hero" src="https://github.com/user-attachments/assets/8233dbc3-9eb0-4ac7-9e91-176ce31a9d99" />
 
 Touch-friendly fullscreen game launcher for Windows. Swipe the carousel, tap a card to select it,
 tap it again (or press Play) to launch. The launcher hides while the game runs and comes back
